@@ -3,21 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import Login from './Login';
 import Home from './Home';
 
 ReactDOM.render(
   <React.StrictMode>
     {console.log(process.env.PUBLIC_URL)}
-    <BrowserRouter>
+    <HashRouter>
       {/* <App /> */}
       <Routes>
         <Route path={process.env.PUBLIC_URL + '/'} element={<App />} />
         <Route path={process.env.PUBLIC_URL + '/login'} element={<Login />} />
         <Route path={process.env.PUBLIC_URL + '/home'} element={<Home />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
