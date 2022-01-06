@@ -9,12 +9,13 @@ import Home from './Home';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter basename={process.env.PUBLIC_URL + '/'}>
+    {console.log(process.env.PUBLIC_URL)}
+    <BrowserRouter>
       {/* <App /> */}
       <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/home" element={<Home />} />
+        <Route path={process.env.PUBLIC_URL + '/'} element={<App />} />
+        <Route path={process.env.PUBLIC_URL + '/login'} element={<Login />} />
+        <Route path={process.env.PUBLIC_URL + '/home'} element={<Home />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
